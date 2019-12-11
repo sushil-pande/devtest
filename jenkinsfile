@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('checkout'){
+            steps{
+                git branch: 'master', url: 'https://github.com/sushil-pande/devtest.git'
+            }
+        }
+
+        stage('test'){
+            when {
+                changeset "**"
+            }
+            steps{
+                echo "The file did change in the last commit (SCM checking)"
+            }
+        }
+    }
+}
