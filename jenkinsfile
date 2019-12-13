@@ -8,10 +8,10 @@ pipeline{
 			{
 				if (env.BRANCH_NAME == 'development')
 				{
-					git branch: 'development', url: 'https://github.com/jaymount/basixs.git'
+					git branch: 'development', url: 'https://github.com/sushil-pande/devtest.git'
 				} else if(env.BRANCH_NAME == 'master')
 				{
-					git branch: 'master', url: 'https://github.com/jaymount/basixs.git'
+					git branch: 'master', url: 'https://github.com/sushil-pande/devtest.git'
 				}
 			}
         }
