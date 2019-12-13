@@ -4,16 +4,19 @@ pipeline{
     stages{
 		stage('checkout')
 		{
-			script
-			{
-				if (env.BRANCH_NAME == 'development')
-				{
+            steps
+            {
+			    script
+			    {
+				    if (env.BRANCH_NAME == 'development')
+				    {
 					git branch: 'development', url: 'https://github.com/sushil-pande/devtest.git'
-				} else if(env.BRANCH_NAME == 'master')
-				{
+				    } else if(env.BRANCH_NAME == 'master')
+				    {
 					git branch: 'master', url: 'https://github.com/sushil-pande/devtest.git'
 				}
 			}
+        }
         }
         stage('test')
         {
